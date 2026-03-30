@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary-teal: #00897b;
+  --accent-mint: #00e676;
+  --dark-text: #1a1a1a;
+  --light-gray: #f8fafc;
+  --border-color: #e2e8f0;
+}
+
+.login-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* LEFT SIDE VISUAL */
+.login-visual {
+  width: 55%;
+  position: relative;
+  background: var(--dark-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bg-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.visual-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 137, 123, 0.8) 0%, rgba(26, 26, 26, 0.9) 100%);
+  z-index: 1;
+}
+
+.visual-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 60px;
+  max-width: 500px;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  padding: 6px 15px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.visual-content h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.visual-content h1 span { color: var(--accent-mint); }
+.visual-content p { font-size: 18px; opacity: 0.8; margin-top: 20px; }
+
+/* RIGHT SIDE FORM */
+.login-form-side {
+  width: 45%;
+  background: var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* Topographic Background Pattern */
+  background-image: radial-gradient(#cbd5e1 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+}
+
+.floating-back {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 45px;
+  height: 45px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-teal);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.floating-back:hover { background: var(--primary-teal); color: white; transform: rotate(-15deg); }
+
+.form-wrapper {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+}
+
+.form-header { text-align: left; margin-bottom: 40px; margin-top: 120px; }
+.logo-pill {
+  width: 50px; height: 50px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--primary-teal);
+  box-shadow: 0 10px 20px rgba(0, 137, 123, 0.1);
+  margin-bottom: 20px;
+}
+
+.form-header h2 { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 700; margin: 0; color: #1e293b; }
+.form-header p { color: #64748b; font-size: 14px; margin-top: 8px; }
+
+/* INPUT STACK */
+.input-stack { display: flex; flex-direction: column; gap: 20px; }
+.custom-input label { font-size: 13px; font-weight: 600; color: #475569; margin-bottom: 8px; display: block; }
+
+.input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrap i { position: absolute; left: 16px; color: #94a3b8; font-size: 14px; }
+.input-wrap input {
+  width: 100%;
+  padding: 14px 15px 14px 45px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border-color);
+  background: white;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-wrap input:focus {
+  border-color: var(--primary-teal);
+  box-shadow: 0 0 0 4px rgba(0, 137, 123, 0.05);
+}
+
+.form-utils {
+  display: flex;
+  justify-content: space-between; /* Pushes checkbox to left and link to right */
+  align-items: center;           /* Centers them vertically */
+  width: 100%;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center; /* This is the "Magic" for the single line alignment */
+  gap: 8px;            /* Precise space between checkbox and text */
+  cursor: pointer;
+  color: #64748b;      /* Muted gray to match theme */
+  user-select: none;
+}
+
+.checkbox-container input {
+  margin: 0;           /* Removes default browser margins that break alignment */
+  width: 16px;         /* Standardizing size */
+  height: 16px;
+  accent-color: #00897b; /* Makes the checkmark color match your Teal theme */
+  cursor: pointer;
+}
+
+.forgot-link {
+  color: #00897b;      /* Your Primary Teal */
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+  color: #00e676;      /* Electric Emerald on hover */
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--primary-teal);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(0, 137, 123, 0.15);
+}
+
+.submit-btn:hover { background: #00695c; transform: translateY(-2px); }
+
+.form-footer { margin-top: 40px; text-align: center; border-top: 1px solid var(--border-color); padding-top: 25px; }
+.form-footer p { font-size: 12px; color: #94a3b8; line-height: 1.6; }
+.form-footer span { color: var(--accent-mint); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .login-visual { display: none; }
+  .login-form-side { width: 100%; }
+  .form-wrapper { max-width: 450px; }
+}
